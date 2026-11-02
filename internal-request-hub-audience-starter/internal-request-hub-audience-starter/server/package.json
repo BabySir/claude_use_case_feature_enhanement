@@ -1,0 +1,23 @@
+{
+  "name": "request-hub-server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "test": "node --test",
+    "lint": "eslint src test",
+    "db:reset": "node src/reset-db.js",
+    "docs:openapi": "node scripts/generate-openapi.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "eslint": "^9.35.0",
+    "globals": "^16.3.0",
+    "swagger-jsdoc": "^6.3.0"
+  }
+}

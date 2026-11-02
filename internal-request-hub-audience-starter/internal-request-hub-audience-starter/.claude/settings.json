@@ -1,0 +1,23 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Edit(/server/src/app.js)",
+            "command": "cd \"$CLAUDE_PROJECT_DIR/server\" && npm run docs:openapi",
+            "statusMessage": "Regenerating docs/openapi.json"
+          },
+          {
+            "type": "command",
+            "if": "Write(/server/src/app.js)",
+            "command": "cd \"$CLAUDE_PROJECT_DIR/server\" && npm run docs:openapi",
+            "statusMessage": "Regenerating docs/openapi.json"
+          }
+        ]
+      }
+    ]
+  }
+}
